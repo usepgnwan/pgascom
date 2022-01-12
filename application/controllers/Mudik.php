@@ -30,8 +30,8 @@ class Mudik extends CI_Controller
 		// $data['recovered'] = 0;
 		// $data['active'] = 0;
 		$data['rute'] = $this->rute->getAllData()->result_array();
-		var_dump($data['rute']);
-		die;
+		// var_dump($data['rute']);
+		// die;
 		$this->template->load('template/template_user', 'test.php', $data);
 	}
 }
