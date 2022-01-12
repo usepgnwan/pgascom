@@ -55,7 +55,7 @@
 										</div>
 										<div class="form-group">
 											<label>Email</label>
-											<input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Masuakn ALamat Email">
+											<input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Masuakn Alamat Email">
 										</div>
 										<div class="form-group">
 											<label>Alamat</label>
@@ -67,7 +67,7 @@
 										</div>
 										<div class="form-group">
 											<label>Repeat Password</label>
-											<input type="password" name="repeat_password" class="form-control" placeholder="Repeat Password">
+											<input type="password" name="repeat_password" class="form-control" placeholder="Ulangi Password">
 										</div>
 										<div class="form-group">
 											<button type="submit" class="btn btn-primary btn-block">Registrasi</button>

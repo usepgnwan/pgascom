@@ -85,18 +85,17 @@
 					<div class="container">
 						<div class="nav-header">
 							<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-							<h1 id="fh5co-logo"><a href="index.html">Pgscom</a></h1>
+							<h1 id="fh5co-logo"><a href="<?= base_url('mudik'); ?>">Pgscom</a></h1>
 							<nav id="fh5co-menu-wrap" role="navigation">
 								<ul class="sf-menu" id="fh5co-primary-menu">
-									<li><a class="active" href="index.html">Home</a></li>
-									<li><a href="services.html">Rute</a></li>
+									<li><a class="active" href="<?= base_url('mudik'); ?>">Home</a></li>
 									<!-- <li><a href="contact.html">Contact</a></li> -->
 									<?php if ($this->session->logged_in) : ?>
 										<li>
 											<a href="javascript:void(0)" class="fh5co-sub-ddown"><?= $this->session->nama; ?></a>
 											<ul class="fh5co-sub-menu">
 												<?php if ($this->session->level == 'user') : ?>
-													<li><a href="#">Cek Tiket Mudik</a></li>
+													<li><a href="<?= base_url('mudik/list_tiket_boking'); ?>">Cek Tiket Mudik</a></li>
 												<?php endif; ?>
 												<li><a href="<?= base_url('auth/logout') ?>">Logout</a></li>
 											</ul>
@@ -157,26 +156,39 @@
 						<div id="availability">
 							<form action="#">
 
-								<div class="a-col">
-									<section>
-										<select class="cs-select ">
-											<option value="" disabled selected>Select Hotel</option>
-											<option value="email">Luxe Hotel</option>
-											<option value="twitter">Deluxe Hotel</option>
-											<option value="linkedin">Five Star Hotel</option>
-										</select>
-									</section>
-								</div>
+
 								<div class="a-col alternate">
 									<div class="input-field">
-										<label for="date-start">Check In</label>
-										<input type="text" class="form-control" id="date-start" />
+										<label for="date-start">Moda Transportasi</label>
+										<section>
+											<select class="cs-select ">
+												<option value="" disabled selected>-Pilih-</option>
+												<option value="email">Lorem Ipsum</option>
+											</select>
+										</section>
+									</div>
+								</div>
+
+								<div class="a-col alternate">
+									<div class="input-field">
+										<label for="date-start">Kota Asal</label>
+										<section>
+											<select class="cs-select ">
+												<option value="" disabled selected>-Pilih-</option>
+												<option value="email">Lorem Ipsum</option>
+											</select>
+										</section>
 									</div>
 								</div>
 								<div class="a-col alternate">
 									<div class="input-field">
-										<label for="date-end">Check Out</label>
-										<input type="text" class="form-control" id="date-end" />
+										<label for="date-end">Kota Tujuan</label>
+										<section>
+											<select class="cs-select ">
+												<option value="" disabled selected>-Pilih-</option>
+												<option value="email">Lorem Ipsum</option>
+											</select>
+										</section>
 									</div>
 								</div>
 								<div class="a-col action">
@@ -222,104 +234,38 @@
 			<div id="featured-hotel" class="fh5co-bg-color">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-6" style="margin-top:10px !important;">
-							<div class="card card-boking">
-								<!-- <img class="card-img-top" src="<?php echo base_url('assets/user/images/image-1.jpg') ?>" alt="image" style="width:100%"> -->
-								<div class="card-body">
-									<h4 class="card-title"><b> Mode Transportasi Bus </b></h4>
-									<div class="row">
-										<div class="col-sm-4"><b>Kota Asal</b></div>
-										<div class="col-sm-8">: Bandung dari 12 Jan 2022 07:53 AM </div>
-										<div class="col-sm-4"><b>Kota Tujuan</b></div>
-										<div class="col-sm-8">: Surabaya sampai 12 Jan 2022 07:53 AM </div>
-										<div class="col-sm-4"><b>Slot Tersedia</b></div>
-										<div class="col-sm-8"><b>: 3</b></div>
-										<div class="col-sm-4">Sisa Slot</div>
-										<div class="col-sm-3"><b>9</b></div>
-										<div class="col-sm-12">
-											<input class="form-control" type="number" value="0">
-										</div>
-										<div class="col-sm-12 " style="margin-top:10px !important;">
-											<a href="javascript:void(0)" class="btn btn-primary  input-block-level form-control">Boking Tiket</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6" style="margin-top:10px !important;">
-							<div class="card card-boking">
-								<!-- <img class="card-img-top" src="<?php echo base_url('assets/user/images/image-1.jpg') ?>" alt="image" style="width:100%"> -->
-								<div class="card-body">
-									<h4 class="card-title"><b> Mode Transportasi Bus </b></h4>
-									<div class="row">
-										<div class="col-sm-6 col-lg-4"><b>Kota Asal</b></div>
-										<div class="col-sm-6 col-lg-8">: Bandung dari 12 Jan 2022 07:53 AM </div>
-										<div class="col-sm-6 col-lg-4"><b>Kota Tujuan</b></div>
-										<div class="col-sm-6 col-lg-8">: Surabaya sampai 12 Jan 2022 07:53 AM </div>
-										<div class="col-sm-6 col-lg-4"><b>Slot Tersedia</b></div>
-										<div class="col-sm-6 col-lg-8"><b>: 3</b></div>
-										<div class="col-sm-6 col-lg-4">Sisa Slot</div>
-										<div class="col-sm-6 col-lg-8"><b>9</b></div>
-										<div class="col-sm-12">
-											<input class="form-control" type="number" value="0">
-										</div>
-										<div class="col-sm-12 " style="margin-top:10px !important;">
-											<a href="javascript:void(0)" class="btn btn-primary  input-block-level form-control">Boking Tiket</a>
+						<?php foreach ($rute as $r) :
+							$check = sisaSlotTiket($r['id'], $r['slot']);
+						?>
+							<form action="<?= base_url('mudik/booking_tiket') ?>" method="POST">
+								<div class="col-md-6" style="margin-top:10px !important;">
+									<div class="card card-boking">
+										<!-- <img class="card-img-top" src="<?php echo base_url('assets/user/images/image-1.jpg') ?>" alt="image" style="width:100%"> -->
+										<div class="card-body">
+											<h4 class="card-title"> Mode Transportasi, <b><?= $r['nama_transportasi']; ?> </b></h4>
+											<div class="row">
+												<div class="col-sm-3 "><b>Kota Asal</b></div>
+												<div class="col-sm-9 ">: <?= $r['kota_asal']; ?> dari <?= date('Y M d H:i A', strtotime($r['tanggal_keberangkatan'])); ?></div>
+												<div class="col-sm-3 "><b>Kota Tujuan</b></div>
+												<div class="col-sm-9 ">: <?= $r['kota_tujuan']; ?> sampai <?= date('Y M d H:i A', strtotime($r['tanggal_sampai'])); ?> </div>
+												<div class="col-sm-3 "><b>Slot Tersedia</b></div>
+												<div class="col-sm-9 ">: <?= $r['slot']; ?></div>
+												<div class="col-sm-3 "><b>Sisa Slot</b></div>
+												<div class="col-sm-9 ">: <?= $check == 0 ? 'Habis' : $check; ?></div>
+												<div class="col-sm-12">
+													<input class="form-control" name="jumlah_tiket" type="number" value="0">
+													<input class="form-control" name="id_rute" type="hidden" value="<?= $r['id']; ?>">
+												</div>
+												<div class="col-sm-12 " style="margin-top:10px !important;">
+													<?= $check == 0 ? '<a href="javascript:void(0)" type="submit" class="btn btn-primary  input-block-level form-control" disabled>Tiket Habis</a>' : '<button type="submit" class="btn btn-primary  input-block-level form-control">Boking Tiket</a>'; ?>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-						<div class="col-md-6" style="margin-top:10px !important;">
-							<div class="card card-boking">
-								<!-- <img class="card-img-top" src="<?php echo base_url('assets/user/images/image-1.jpg') ?>" alt="image" style="width:100%"> -->
-								<div class="card-body">
-									<h4 class="card-title"><b> Mode Transportasi Bus </b></h4>
-									<div class="row">
-										<div class="col-sm-4"><b>Kota Asal</b></div>
-										<div class="col-sm-8">: Bandung dari 12 Jan 2022 07:53 AM </div>
-										<div class="col-sm-4"><b>Kota Tujuan</b></div>
-										<div class="col-sm-8">: Surabaya sampai 12 Jan 2022 07:53 AM </div>
-										<div class="col-sm-4"><b>Slot Tersedia</b></div>
-										<div class="col-sm-8"><b>: 3</b></div>
-										<div class="col-sm-4">Sisa Slot</div>
-										<div class="col-sm-3"><b>9</b></div>
-										<div class="col-sm-12">
-											<input class="form-control" type="number" value="0">
-										</div>
-										<div class="col-sm-12 " style="margin-top:10px !important;">
-											<a href="javascript:void(0)" class="btn btn-primary  input-block-level form-control">Boking Tiket</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6" style="margin-top:10px !important;">
-							<div class="card card-boking">
-								<!-- <img class="card-img-top" src="<?php echo base_url('assets/user/images/image-1.jpg') ?>" alt="image" style="width:100%"> -->
-								<div class="card-body">
-									<h4 class="card-title"><b> Mode Transportasi Bus </b></h4>
-									<div class="row">
-										<div class="col-sm-4"><b>Kota Asal</b></div>
-										<div class="col-sm-8">: Bandung dari 12 Jan 2022 07:53 AM </div>
-										<div class="col-sm-4"><b>Kota Tujuan</b></div>
-										<div class="col-sm-8">: Surabaya sampai 12 Jan 2022 07:53 AM </div>
-										<div class="col-sm-4"><b>Slot Tersedia</b></div>
-										<div class="col-sm-8"><b>: 3</b></div>
-										<div class="col-sm-4">Sisa Slot</div>
-										<div class="col-sm-3"><b>9</b></div>
-										<div class="col-sm-12">
-											<input class="form-control" type="number" value="0">
-										</div>
-										<div class="col-sm-12 " style="margin-top:10px !important;">
-											<a href="javascript:void(0)" class="btn btn-primary  input-block-level form-control">Boking Tiket</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+							</form>
+						<?php endforeach; ?>
 					</div>
-
 				</div>
 			</div>
 
@@ -335,9 +281,7 @@
 						<div class="row">
 							<div class="col-md-3">
 								<div class="copyright">
-									<p><small>© 2016 Free HTML5 Template. <br> All Rights Reserved. <br>
-											Designed by <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a> <br>
-											Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
+									<p><small>© 2022 . <br> All Rights Reserved. <br>
 									</p>
 								</div>
 							</div>
@@ -347,20 +291,14 @@
 										<h3>Company</h3>
 										<ul class="link">
 											<li><a href="#">About Us</a></li>
-											<li><a href="#">Hotels</a></li>
-											<li><a href="#">Customer Care</a></li>
-											<li><a href="#">Contact Us</a></li>
 										</ul>
 									</div>
 									<div class="col-md-3">
 										<h3>Our Facilities</h3>
 										<ul class="link">
-											<li><a href="#">Resturant</a></li>
-											<li><a href="#">Bars</a></li>
-											<li><a href="#">Pick-up</a></li>
-											<li><a href="#">Swimming Pool</a></li>
-											<li><a href="#">Spa</a></li>
-											<li><a href="#">Gym</a></li>
+											<li><a href="#">Bus</a></li>
+											<li><a href="#">Pesawat</a></li>
+											<li><a href="#">Kereta</a></li>
 										</ul>
 									</div>
 									<div class="col-md-6">

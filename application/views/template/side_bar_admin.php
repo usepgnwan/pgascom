@@ -6,11 +6,11 @@
 		<div class="sidebar-brand-text mx-3">PGSCOM</div>
 	</a>
 	<hr class="sidebar-divider my-0">
-	<li class="nav-item active">
+	<!-- <li class="nav-item active">
 		<a class="nav-link" href="index.html">
 			<i class="fas fa-fw fa-tachometer-alt"></i>
 			<span>Dashboard</span></a>
-	</li>
+	</li> -->
 	<hr class="sidebar-divider">
 	<div class="sidebar-heading">
 		Features
@@ -25,6 +25,7 @@
 				<h6 class="collapse-header">Data Master</h6>
 				<a class="collapse-item" href="<?= base_url('kota'); ?>">Nama Kota</a>
 				<a class="collapse-item" href="<?= base_url('moda_transportasi'); ?>">Moda Transportasi</a>
+				<a class="collapse-item" href="<?= base_url('user'); ?>">List User</a>
 			</div>
 		</div>
 	</li>

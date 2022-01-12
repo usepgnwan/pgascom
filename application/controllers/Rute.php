@@ -33,7 +33,7 @@ class Rute extends CI_Controller
 			$row[] = date('d M Y h:i:s', strtotime($s->tanggal_keberangkatan));
 			$row[] = date('d M Y h:i:s', strtotime($s->tanggal_sampai));
 			$row[] = $s->slot;
-			$row[] = sisaSlotTiket($s->id, $s->slot);;
+			$row[] = sisaSlotTiket($s->id, $s->slot);
 
 			$row[] = '
 			 <a class="btn btn-sm btn-primary" href="' . base_url('rute/details_tiket_acc/') . $s->id . '" title="Lihat Semua Slot / Tiket Aktif"  ><i class="fas fa-fw fa-eye"></i></a>

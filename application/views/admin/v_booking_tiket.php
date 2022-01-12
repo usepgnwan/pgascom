@@ -155,6 +155,7 @@
 
    	$('body').on('click', '.verif-boking', function() {
    		let id = $(this).data('id');
+   		let idrute = $(this).data('idrute');
    		swal({
    			title: "Yakin",
    			text: "Verifikasi Boking Tiket " + id + " ?",
@@ -164,12 +165,18 @@
    		}).then((ok) => {
    			if (ok) {
    				$.ajax({
-   					'url': "<?php echo base_url('booking_tiket/verifikasiBokingTiket/'); ?>" + id,
+   					'url': "<?php echo base_url('booking_tiket/verifikasiBokingTiket/'); ?>" + id + '/' + idrute,
    					'method': 'POST',
    					'success': function(data) {
    						if (data == 'success') {
    							swal("Berhasil Verifikasi Boking Tiket " + id, {
    								icon: "success"
+   							}).then(() => {
+   								table.draw();
+   							});
+   						} else if (data == 'habis') {
+   							swal("Slot Habis / Kurang dari Pesanan", {
+   								icon: "warning"
    							}).then(() => {
    								table.draw();
    							});

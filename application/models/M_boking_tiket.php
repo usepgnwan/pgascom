@@ -120,4 +120,13 @@ class M_boking_tiket extends CI_Model
 		$this->db->where('id', $id);
 		return $this->db->update($this->table, $data);
 	}
+	public function checkId($like, $table)
+	{
+		return $this->db->select_max('id')->like('id', $like, 'after')->get($table);
+	}
+
+	public function storeBokingTiket($data, $table)
+	{
+		return	$this->db->insert($table, $data);
+	}
 }

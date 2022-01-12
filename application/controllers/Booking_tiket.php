@@ -7,6 +7,7 @@ class Booking_tiket extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('M_boking_tiket', 'boking');
+		$this->load->model('M_rute', 'rute');
 	}
 	public function index()
 	{
@@ -37,14 +38,14 @@ class Booking_tiket extends CI_Controller
 			// } elseif (!is_null($s->token_verifikasi) && $s->token_verifikasi == $s->token) {
 			$btn = '';
 			if ($s->status_boking == 'proses') {
-				$btn = ' <a class="btn btn-sm btn-warning verif-boking" href="javascript:void(0)" title="Verfikasi Semua Tiket" data-id=' . "'" . $s->id_boking  . "'" . '><i class="fas fa-fw fa-edit"></i></a>';
+				$btn = ' <a class="btn btn-sm btn-warning verif-boking" href="javascript:void(0)" title="Verfikasi Semua Tiket" data-id=' . "'" . $s->id_boking  . "'" . '  data-idrute=' . "'" . $s->id  . "'" . '><i class="fas fa-fw fa-edit"></i></a>';
 				$row[] = 'Terverifikasi, Menunggu Approval';
 			} else if ($s->status_boking == 'valid') {
 				$row[] = '<span class="badge badge-success">Tiket Aktif</span>';
 				$btn = '';
 			} else if ($s->status_boking == 'unvalid') {
 				$row[] = 'Tiket Ditolak';
-				$btn = ' <a class="btn btn-sm btn-warning verif-boking" href="javascript:void(0)" title="Verfikasi Semua Tiket" data-id=' . "'" . $s->id_boking  . "'" . '><i class="fas fa-fw fa-edit"></i></a>';
+				$btn = ' <a class="btn btn-sm btn-warning verif-boking" href="javascript:void(0)" title="Verfikasi Semua Tiket" data-id=' . "'" . $s->id_boking  . "'" . '  data-idrute=' . "'" . $s->id  . "'" . '><i class="fas fa-fw fa-edit"></i></a>';
 			}
 			// } else {
 			// 	$row[] = 'Token Salah';
@@ -78,11 +79,18 @@ class Booking_tiket extends CI_Controller
 		]);
 	}
 
-	public function verifikasiBokingTiket($id)
+	public function verifikasiBokingTiket($id, $idrute)
 	{
-		$data['status_boking'] = 'valid';
-		$data['updated_at'] = date('Y-m-d H:i:s');
-		$this->boking->updateBoking($id, $data);
-		echo 'success';
+		$rute = $this->rute->editRute($idrute)->row_array();
+		$jumlah_pesan = jumlahTiketBoking($id);
+		$sisa = sisaSlotTiket($idrute, $rute['slot']);
+		if ($sisa >= $jumlah_pesan) {
+			$data['status_boking'] = 'valid';
+			$data['updated_at'] = date('Y-m-d H:i:s');
+			$this->boking->updateBoking($id, $data);
+			echo 'success';
+		} else if ($sisa < $jumlah_pesan) {
+			echo 'habis';
+		}
 	}
 }

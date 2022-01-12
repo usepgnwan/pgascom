@@ -58,7 +58,7 @@ class Auth extends CI_Controller
 						// var_dump($this->session->all_userdata());
 						// die;
 						if ($this->session->level == 'admin') {
-							redirect('dashboard', 'refresh');
+							redirect('rute', 'refresh');
 						} else if ($this->session->level == 'user') {
 							redirect('mudik', 'refresh');
 						}
