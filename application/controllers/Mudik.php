@@ -90,7 +90,8 @@ class Mudik extends CI_Controller
 
 		for ($i = 0; $i < count($input['nama']); $i++) {
 			// tiket
-			$idtkt = "TKT-" .  str_replace(".", "", microtime(true));
+			// $idtkt = "TKT-" .  str_replace(".", "", microtime(true));
+			$idtkt = "TKT-" .  time() . $i . mt_rand(100, 999);
 			$dataTiket['id'] = $idtkt;
 			$dataTiket['nama'] = $input['nama'][$i];
 			$dataTiket['jenis_kelamin'] = $input['jenis_kelamin'][$i];

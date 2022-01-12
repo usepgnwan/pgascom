@@ -9,7 +9,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Pgscom</title>
+	<title>Pgascom</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -85,7 +85,7 @@
 					<div class="container">
 						<div class="nav-header">
 							<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-							<h1 id="fh5co-logo"><a href="<?= base_url('mudik'); ?>">Pgscom</a></h1>
+							<h1 id="fh5co-logo"><a href="<?= base_url('mudik'); ?>">Pgascom</a></h1>
 							<nav id="fh5co-menu-wrap" role="navigation">
 								<ul class="sf-menu" id="fh5co-primary-menu">
 									<li><a class="active" href="<?= base_url('mudik'); ?>">Home</a></li>
@@ -118,7 +118,7 @@
 					<div class="row">
 						<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 							<div class="fh5co-intro fh5co-table-cell">
-								<h1 class="text-center">Mudik Bareng Pgscom</h1>
+								<h1 class="text-center">Mudik Bareng Pgascom</h1>
 								<p>Jangan Lupa Tetap Jaga 3M karena Covid-19 Belum Usai</a></p>
 								<div id="fh5co-counter-section" style="padding:0 !important;" class="fh5co-counters">
 									<div class="container">

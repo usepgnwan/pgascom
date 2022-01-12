@@ -3,7 +3,7 @@
 		<div class="sidebar-brand-icon">
 			<img src="<?= base_url('assets/admin/img/logo/logo2.png'); ?>" width="90px">
 		</div>
-		<div class="sidebar-brand-text mx-3">PGSCOM</div>
+		<div class="sidebar-brand-text mx-3">PGASCOM</div>
 	</a>
 	<hr class="sidebar-divider my-0">
 	<!-- <li class="nav-item active">

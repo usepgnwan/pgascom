@@ -71,6 +71,7 @@
  												<th>Nama</th>
  												<th>Alamat</th>
  												<th>Jenis Kelamin</th>
+ 												<th>Peruntukan</th>
  												<th>Status</th>
  												<th>Tanggal Boking</th>
  											</tr>
@@ -83,6 +84,7 @@
  													<td><?= $t['nama']; ?></td>
  													<td><?= $t['alamat']; ?></td>
  													<td><?= $t['jenis_kelamin']; ?></td>
+ 													<td><?= $t['status_tiket']; ?></td>
  													<td><?= $t['status_verifikasi'] == 'valid' ? '<span class="badge badge-success"> Tiket Aktif </span>' :  $t['status_verifikasi']; ?></td>
  													<td><?= date('d M Y H:i A', strtotime($t['created_at'])); ?></td>
  												</tr>
